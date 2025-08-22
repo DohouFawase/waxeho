@@ -1,9 +1,8 @@
 'use client'
 import { Navlink } from "@/mock/data";
-import Image from "next/image";
 import Link from "next/link";
 import { AlignRight, X } from 'lucide-react';
-import { useCallback, useState } from "react";
+import { useState } from "react";
 
 export default function NavBar() {
     const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
