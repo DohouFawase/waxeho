@@ -1,7 +1,5 @@
 'use client'
-import { Navlink } from "@/mock/data";
-
-import Link from "next/link";
+  ;
 import HeroSection from "./_components/HeroSection";
 import ServiceSetion from "./_components/ServiceSection";
 import SolutionSection from "./_components/SolutionSection";

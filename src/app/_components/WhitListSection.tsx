@@ -1,8 +1,8 @@
 'use client';
 
 import type React from 'react';
-import { useState, useEffect } from 'react';
-import { ArrowRight, Sparkles, Code, Star, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 // import { Particles } from '@/components/ui/particles';
 // import { Spotlight } from '@/components/ui/spotlight';
@@ -28,7 +28,7 @@ export default function WaitlistPage() {
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState<string | null>(null);
     //   const { resolvedTheme } = useTheme();
-    const [color, setColor] = useState('#ffffff');
+    const [] = useState('#ffffff');
 
     //   useEffect(() => {
     //     setColor(resolvedTheme === 'dark' ? '#ffffff' : '#e60a64');
