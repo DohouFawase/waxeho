@@ -1,6 +1,6 @@
 'use client';
 
-import { Instagram, Linkedin, Twitter, Youtube, Globe, MapPin, Camera, Compass } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, Youtube, Globe, MapPin, Compass } from 'lucide-react';
 
 const footerColumns = [
     {
@@ -124,7 +124,7 @@ export default function WaxehoFooter() {
                         </div>
                         <p className="text-gray-400 mb-6 leading-relaxed">
                             Nous créons des solutions technologiques sur mesure pour faciliter
-                            le tourisme mondial et propulser l'évolution digitale du secteur africain.
+                            le tourisme mondial et propulser l&apos;évolution digitale du secteur africain.
                         </p>
                         <div className="flex space-x-3">
                             {socialIcons.map((item, i) => (
