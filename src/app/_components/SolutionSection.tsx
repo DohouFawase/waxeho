@@ -3,44 +3,48 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { Rocket, Code, Paintbrush } from 'lucide-react';
+import { Server, Smartphone, Monitor, Palette } from 'lucide-react';
 
 const features = [
     {
-        step: 'Step 1',
-        title: 'Build Faster',
+        step: 'Solution 1',
+        title: 'Gestion de Restaurants',
         content:
-            'Create your MVP in record time with our pre-built blocks and components.',
-        icon: <Rocket className="text-primary h-6 w-6" />,
+            'Créez un système complet pour gérer les commandes, les réservations et le suivi client, entièrement personnalisé pour vos établissements.',
+        icon: <Server className="text-primary h-6 w-6" />,
         image:
-            'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=2070&auto=format&fit=crop',
+        url: '/solutions/gestion-restaurant',
     },
     {
-        step: 'Step 2',
-        title: 'Customize Easily',
+        step: 'Solution 2',
+        title: 'Applications Mobiles sur-mesure',
         content:
-            'Tailor every component to your needs with our intuitive design system and flexible architecture.',
-        icon: <Paintbrush className="text-primary h-6 w-6" />,
+            'Développez des applications natives ou cross-platform adaptées à vos besoins, avec une expérience utilisateur optimisée et des fonctionnalités innovantes.',
+        icon: <Smartphone className="text-primary h-6 w-6" />,
         image:
-            'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?q=80&w=2070&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1581091012184-7e3e904e2c9f?q=80&w=2070&auto=format&fit=crop',
+        url: '/solutions/app-mobile',
     },
     {
-        step: 'Step 3',
-        title: 'Deploy Confidently',
+        step: 'Solution 3',
+        title: 'Portails et Sites Web',
         content:
-            'Launch your product with confidence using our optimized, responsive, and accessible components.',
-        icon: <Code className="text-primary h-6 w-6" />,
+            'Concevez des portails interactifs et des sites web immersifs pour vos clients, intégrant réservation, informations culturelles et contenus dynamiques.',
+        icon: <Monitor className="text-primary h-6 w-6" />,
         image:
-            'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=2070&auto=format&fit=crop',
+        url: '/solutions/portail-web',
     },
     {
-        step: 'Step 4',
-        title: 'Add Yours!',
+        step: 'Solution 4',
+        title: 'Design UI/UX & Identité visuelle',
         content:
-            'Contribute your own blocks and become part of the MVPBlocks community.',
-        icon: <Code className="text-primary h-6 w-6" />,
+            'Nos designers créent des interfaces intuitives et modernes pour tous vos supports digitaux, optimisant l’expérience utilisateur et l’impact visuel.',
+        icon: <Palette className="text-primary h-6 w-6" />,
         image:
-            'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2070&auto=format&fit=crop',
+        url: '/solutions/ui-ux',
     },
 ];
 
@@ -67,29 +71,22 @@ export default function SolutionSection() {
                 <div className="relative mx-auto mb-12 max-w-2xl sm:text-center">
                     <div className="relative z-10">
                         <h2 className="font-geist text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
-                            Nos Solutions
+                            Nos Solutions sur-mesure
                         </h2>
                         <p className="font-geist text-foreground/60 mt-3">
-                            MVPBlocks helps you create, customize, and deploy your product
-                            faster than ever before.
+                            Découvrez nos solutions personnalisées pour booster votre activité et offrir une expérience client unique.
                         </p>
                     </div>
-                    <div
-                        className="absolute inset-0 mx-auto h-44 max-w-xs blur-[118px]"
-                        style={{
-                            background:
-                                'linear-gradient(152.92deg, rgba(192, 15, 102, 0.2) 4.54%, rgba(192, 11, 109, 0.26) 34.2%, rgba(192, 15, 102, 0.1) 77.55%)',
-                        }}
-                    ></div>
                 </div>
                 <hr className="bg-foreground/30 mx-auto mb-10 h-px w-1/2" />
 
                 <div className="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-10">
                     <div className="order-2 space-y-8 md:order-1">
                         {features.map((feature, index) => (
-                            <motion.div
+                            <motion.a
                                 key={index}
-                                className="flex items-center gap-6 md:gap-8"
+                                href={feature.url}
+                                className="flex items-center gap-6 md:gap-8 cursor-pointer"
                                 initial={{ opacity: 0.3, x: -20 }}
                                 animate={{
                                     opacity: index === currentFeature ? 1 : 0.3,
@@ -117,7 +114,7 @@ export default function SolutionSection() {
                                         {feature.content}
                                     </p>
                                 </div>
-                            </motion.div>
+                            </motion.a>
                         ))}
                     </div>
 
