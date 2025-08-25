@@ -10,77 +10,62 @@ interface FaqItem {
     id: string;
     question: string;
     answer: string;
-    category: 'general' | 'pricing' | 'technical' | 'support';
+    category: 'general' | 'services' | 'strategy' | 'training';
 }
-
 const faqItems: FaqItem[] = [
     {
         id: '1',
-        question: 'What is MVPBlocks?',
+        question: 'Qu’est-ce que WAXEHO ?',
         answer:
-            'MVPBlocks is a collection of ready-to-use UI components built with Next.js and Tailwind CSS. It helps developers quickly build beautiful, responsive websites without starting from scratch.',
+            'WAXEHO est une agence de marketing spécialisée dans le tourisme, reliant les professionnels et les voyageurs grâce à des stratégies digitales, storytelling et création de contenus immersifs.',
         category: 'general',
     },
     {
         id: '2',
-        question: 'Is MVPBlocks free to use?',
+        question: 'Quels services proposez-vous ?',
         answer:
-            'Yes, MVPBlocks is completely free and open-source. You can use it for personal and commercial projects without any restrictions or attribution requirements.',
-        category: 'general',
+            'Nous proposons la stratégie digitale, le community management, les campagnes sponsorisées, le storytelling, la création graphique, les relations presse, l’événementiel et les formations.',
+        category: 'services',
     },
     {
         id: '3',
-        question: 'Do I need to know Tailwind CSS to use MVPBlocks?',
+        question: 'Proposez-vous des solutions sur-mesure pour les entreprises ?',
         answer:
-            "While having Tailwind CSS knowledge is helpful, it's not required. You can simply copy and paste our components into your project and make basic modifications without deep Tailwind expertise.",
-        category: 'technical',
+            'Oui, nous créons des solutions personnalisées pour répondre aux besoins spécifiques des entreprises : sites web, applications mobiles, portails internes, et outils de gestion adaptés à chaque projet.',
+        category: 'services',
     },
     {
         id: '4',
-        question: 'How do I install MVPBlocks?',
+        question: 'Travaillez-vous sur le design UI/UX ?',
         answer:
-            "You don't need to install MVPBlocks as a package. Simply browse our component library, find the components you need, and copy the code into your project. Make sure you have the required dependencies installed.",
-        category: 'technical',
+            'Absolument ! Nos équipes de design réalisent des interfaces utilisateurs intuitives et modernes pour le web et le mobile, en optimisant l’expérience utilisateur et l’ergonomie.',
+        category: 'services',
     },
     {
         id: '5',
-        question: 'Can I customize the components?',
+        question: 'Comment WAXEHO aide-t-il à augmenter la visibilité de mon établissement ?',
         answer:
-            'Absolutely! All components are built with customization in mind. You can modify colors, spacing, typography, and more using Tailwind classes or by editing the component code directly.',
-        category: 'technical',
+            'Nous créons des contenus performants, déployons des publicités ciblées et animons vos réseaux sociaux pour générer des leads qualifiés et renforcer votre notoriété.',
+        category: 'strategy',
     },
     {
         id: '6',
-        question: 'Do MVPBlocks components work with dark mode?',
+        question: 'Proposez-vous des formations pour les équipes internes ?',
         answer:
-            "Yes, all MVPBlocks components are designed to work seamlessly with both light and dark modes. They automatically adapt to your site's theme settings.",
-        category: 'technical',
-    },
-    {
-        id: '7',
-        question: 'How often are new components added?',
-        answer:
-            'We regularly add new components to the library. Our goal is to provide a comprehensive set of components for all common UI patterns and website sections.',
-        category: 'general',
-    },
-    {
-        id: '8',
-        question: 'How can I contribute to MVPBlocks?',
-        answer:
-            'We welcome contributions! You can contribute by creating new components, improving existing ones, fixing bugs, or enhancing documentation. Check our GitHub repository for contribution guidelines.',
-        category: 'support',
+            'Oui, nous accompagnons vos équipes avec des formations sur mesure en communication digitale, storytelling et marketing touristique pour développer leurs compétences.',
+        category: 'training',
     },
 ];
 
 const categories = [
     { id: 'all', label: 'All' },
     { id: 'general', label: 'General' },
-    { id: 'technical', label: 'Technical' },
-    { id: 'pricing', label: 'Pricing' },
-    { id: 'support', label: 'Support' },
+    { id: 'services', label: 'Services' },
+    { id: 'strategy', label: 'Strategy' },
+    { id: 'training', label: 'Training' },
 ];
 
-export default function FaqSeection() {
+export default function FaqSection() {
     const [activeCategory, setActiveCategory] = useState<string>('all');
     const [expandedId, setExpandedId] = useState<string | null>(null);
 
@@ -94,7 +79,7 @@ export default function FaqSeection() {
     };
 
     return (
-        <section className="bg-background py-16">
+        <section className="bg-background py-16" id="faq">
             <div className="container mx-auto max-w-6xl px-4 md:px-6">
                 <div className="mb-12 flex flex-col items-center">
                     <Badge
@@ -105,12 +90,11 @@ export default function FaqSeection() {
                     </Badge>
 
                     <h2 className="text-foreground mb-6 text-center text-4xl font-bold tracking-tight md:text-5xl">
-                        Frequently Asked Questions
+                        Questions fréquentes
                     </h2>
 
                     <p className="text-muted-foreground max-w-2xl text-center">
-                        Find answers to common questions about MVPBlocks and how to use our
-                        components to build your next project.
+                        Retrouvez ici les réponses aux questions courantes sur nos services et méthodes de travail.
                     </p>
                 </div>
 
@@ -185,24 +169,6 @@ export default function FaqSeection() {
                         ))}
                     </AnimatePresence>
                 </div>
-
-                {/* Contact CTA */}
-                {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="mt-16 text-center"
-        >
-          <p className="text-muted-foreground mb-4">
-            Can&apos;t find what you&apos;re looking for?
-          </p>
-          <a
-            href="#"
-            className="border-primary text-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center justify-center rounded-lg border-2 px-6 py-3 font-medium transition-colors"
-          >
-            Contact Support
-          </a>
-        </motion.div> */}
             </div>
         </section>
     );

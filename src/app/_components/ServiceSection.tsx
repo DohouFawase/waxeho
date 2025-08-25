@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-// Define the feature item type
+// Définir le type des services
 type FeatureItem = {
     icon: LucideIcon;
     title: string;
@@ -18,62 +18,63 @@ type FeatureItem = {
     cornerStyle?: string;
 };
 
-// Create feature data arrays for left and right columns
+// Services WAXEHO - colonne gauche
 const leftFeatures: FeatureItem[] = [
     {
         icon: Building2,
-        title: 'Taught by Professionals',
+        title: 'Stratégie Digitale',
         description:
-            'Learn directly from top engineers and founders with real-world experience.',
+            "Plans d'action personnalisés selon vos objectifs et cibles pour booster votre visibilité et vos ventes.",
         position: 'left',
         cornerStyle: 'sm:translate-x-4 sm:rounded-br-[2px]',
     },
     {
         icon: User2,
-        title: 'Coding Hostels',
+        title: 'Community Management',
         description:
-            'Join virtual hostels to study, collaborate, and vibe with fellow learners.',
+            "Animation dynamique de vos réseaux sociaux pour engager et fidéliser vos communautés.",
         position: 'left',
         cornerStyle: 'sm:-translate-x-4 sm:rounded-br-[2px]',
     },
     {
         icon: Trophy,
-        title: 'Bounties',
+        title: 'Campagnes Sponsorisé',
         description:
-            'Win rewards for solving challenges, contributing to projects, and helping peers.',
+            "Publicités ciblées sur Facebook, Instagram, LinkedIn et YouTube pour maximiser votre visibilité.",
         position: 'left',
         cornerStyle: 'sm:translate-x-4 sm:rounded-tr-[2px]',
     },
 ];
 
+// Services WAXEHO - colonne droite
 const rightFeatures: FeatureItem[] = [
     {
         icon: ScreenShare,
-        title: 'Revision Classes',
+        title: 'Storytelling & Contenu',
         description:
-            'Stay sharp with weekly revision sessions and topic refreshers.',
+            "Récits percutants et contenus immersifs pour renforcer votre identité de marque et inspirer vos audiences.",
         position: 'right',
         cornerStyle: 'sm:-translate-x-4 sm:rounded-bl-[2px]',
     },
     {
         icon: User,
-        title: 'Peer Code Reviews',
+        title: 'Relations Presse & Influence',
         description:
-            'Improve faster with feedback from mentors and batchmates on your actual code.',
+            "Couverture médiatique optimale grâce à des partenariats avec médias et influenceurs.",
         position: 'right',
         cornerStyle: 'sm:translate-x-4 sm:rounded-bl-[2px]',
     },
     {
         icon: Lightbulb,
-        title: 'Leet Lab',
+        title: 'Événementiel & Formations',
         description:
-            'Ace coding interviews with daily DSA problems, contests, and tracking.',
+            "Organisation d'événements marquants et accompagnement personnalisé pour renforcer les compétences de vos équipes.",
         position: 'right',
         cornerStyle: 'sm:-translate-x-4 sm:rounded-tl-[2px]',
     },
 ];
 
-// Feature card component
+// Carte de service
 const FeatureCard = ({ feature }: { feature: FeatureItem }) => {
     const Icon = feature.icon;
 
@@ -93,7 +94,6 @@ const FeatureCard = ({ feature }: { feature: FeatureItem }) => {
                 <p className="text-muted-foreground text-base text-pretty">
                     {feature.description}
                 </p>
-                {/* Decorative elements */}
                 <span className="from-primary/0 via-primary to-primary/0 absolute -bottom-px left-1/2 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r opacity-60"></span>
                 <span className="absolute inset-0 bg-[radial-gradient(30%_5%_at_50%_100%,hsl(var(--primary)/0.15)_0%,transparent_100%)] opacity-60"></span>
             </div>
@@ -101,37 +101,37 @@ const FeatureCard = ({ feature }: { feature: FeatureItem }) => {
     );
 };
 
-export default function ServiceSetion() {
+// Section complète
+export default function ServiceSection() {
     return (
-        <section className="pt-20 pb-8" id="features">
+        <section className="pt-20 pb-8" id="services">
             <div className="mx-6 max-w-[1120px] pt-2 pb-16 max-[300px]:mx-4 min-[1150px]:mx-auto">
                 <div className="flex flex-col-reverse gap-6 md:grid md:grid-cols-3">
-                    {/* Left column */}
+                    {/* Colonne gauche */}
                     <div className="flex flex-col gap-6">
                         {leftFeatures.map((feature, index) => (
                             <FeatureCard key={`left-feature-${index}`} feature={feature} />
                         ))}
                     </div>
 
-                    {/* Center column */}
+                    {/* Colonne centrale */}
                     <div className="order-[1] mb-6 self-center sm:order-[0] md:mb-0">
                         <div className="bg-secondary text-foreground ring-border relative mx-auto mb-4.5 w-fit rounded-full rounded-bl-[2px] px-4 py-2 text-sm ring">
                             <span className="relative z-1 flex items-center gap-2">
-                                Services
+                                Nos Services
                             </span>
                             <span className="from-primary/0 via-primary to-primary/0 absolute -bottom-px left-1/2 h-px w-2/5 -translate-x-1/2 bg-gradient-to-r"></span>
                             <span className="absolute inset-0 bg-[radial-gradient(30%_40%_at_50%_100%,hsl(var(--primary)/0.25)_0%,transparent_100%)]"></span>
                         </div>
                         <h2 className="text-foreground mb-2 text-center text-2xl sm:mb-2.5 md:text-[2rem]">
-                            Key Benefits of Cohorts
+                            Pourquoi choisir WAXEHO ?
                         </h2>
                         <p className="text-muted-foreground mx-auto max-w-[18rem] text-center text-pretty">
-                            Cohorts are best way to learn because you finish the course in a
-                            timely manner
+                            Expertise locale et globale, innovation technologique et storytelling africain pour booster votre visibilité et vos performances.
                         </p>
                     </div>
 
-                    {/* Right column */}
+                    {/* Colonne droite */}
                     <div className="flex flex-col gap-6">
                         {rightFeatures.map((feature, index) => (
                             <FeatureCard key={`right-feature-${index}`} feature={feature} />
