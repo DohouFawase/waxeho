@@ -79,7 +79,7 @@ export default function FaqSection() {
     };
 
     return (
-        <section className="bg-background py-16" id="faq">
+        <section className="relative bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50 py-16 sm:py-20 lg:py-28 overflow-hidden " id="faq">
             <div className="container mx-auto max-w-6xl px-4 md:px-6">
                 <div className="mb-12 flex flex-col items-center">
                     <Badge
