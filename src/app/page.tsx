@@ -4,7 +4,7 @@ import HeroSection from "./_components/HeroSection";
 import ServiceSetion from "./_components/ServiceSection";
 import SolutionSection from "./_components/SolutionSection";
 import FaqSeection from "./_components/FaqSeection";
-import WaitlistPage from "./_components/WhitListSection";
+// import WaitlistPage from "./_components/WhitListSection";
 import TestimonialSection from "./_components/TestimonialSection";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
         <ServiceSetion />
         <SolutionSection />
         <FaqSeection />
-        <WaitlistPage />
+        {/* <WaitlistPage /> */}
         <TestimonialSection />
       </div>
     </div>
