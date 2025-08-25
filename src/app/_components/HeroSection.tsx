@@ -72,7 +72,7 @@
 //     );
 // }
 
-
+'use client'
 import React, { useState, useEffect } from 'react';
 import { Globe, Camera, MapPin, Star, Sun, Palmtree } from 'lucide-react';
 
